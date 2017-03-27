@@ -27,7 +27,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater from = LayoutInflater.from(parent.getContext());
-        View view = from.inflate(R.layout.item_rvd, null);
+        //此处第二个参数如果是 parent 则会出现bug，只能显示出第一行数据 原因不明
+        View view = from.inflate(R.layout.item_rvd, null,false);
         return new ViewHolder(view);
     }
 
